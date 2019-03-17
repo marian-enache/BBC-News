@@ -35,7 +35,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/description_text_color"
-                android:text="@string/lots_of_lorem_ipsum"/>
+                android:text="@string/about_description"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

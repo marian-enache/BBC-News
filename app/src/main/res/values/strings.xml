@@ -10,6 +10,6 @@
     <string name="browser">Browser</string>
     <string name="no_internet">- No Internet</string>
     <string name="about_title">BBC News App to Keep You Informed</string>
-    <string name="lots_of_lorem_ipsum">lots of lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</string>
+    <string name="about_description">Aplicatie pentru afisarea stirilor. Am incercat sa folosesc si Room cu LiveData, insa aveam multe probleme de configuratie intre librariile de la Room si Databinding. </string>
     <string name="remote_error">Error on getting fresh news from the server.</string>
 </resources>
