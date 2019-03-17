@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.marian.bbcnews.Constants"/>
+        <variable name="viewModel"
+                  type="com.example.marian.bbcnews.viewmodels.SettingsViewModel"/>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RadioGroup
+                android:id="@+id/rgOpenType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_default="wrap"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintVertical_bias="0.05">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:text="@string/open_news_in"/>
+
+            <RadioButton
+                    android:id="@+id/idInApp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/application"
+                    android:checked="@{viewModel.openType.equals(Constants.OPEN_TYPE_APP)}"
+                    android:onClick="@{()->viewModel.setOpenType(Constants.OPEN_TYPE_APP)}"
+            />
+
+            <RadioButton
+                    android:id="@+id/idInBrowser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/browser"
+                    android:checked="@{viewModel.openType.equals(Constants.OPEN_TYPE_BROWSER)}"
+                    android:onClick="@{()->viewModel.setOpenType(Constants.OPEN_TYPE_BROWSER)}"
+            />
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

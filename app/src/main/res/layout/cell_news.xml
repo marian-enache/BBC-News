@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+                name="clickListener"
+                type="android.view.View.OnClickListener"/>
+        <variable
+                name="item"
+                type="com.example.marian.bbcnews.rest.models.News"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:onClick="@{clickListener}">
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNews"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                app:newsImage="@{item.image.url}"
+                tools:src="@drawable/ic_news_orange_24dp"/>
+
+        <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/ivNews"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@{item.title}"
+                android:ellipsize="end"
+                tools:text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="4"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintLeft_toRightOf="@id/ivNews"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:textSize="12sp"
+                android:textColor="@color/description_text_color"
+                android:text="@{item.description}"
+                android:ellipsize="end"
+                tools:text="lorem ipsum lorelorem ipsum lorem ipsum "/>
+
+        <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/ivNews"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_default="wrap"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintVertical_bias="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/date_text_color"
+                android:text="@{item.formattedDate}"
+                tools:text="aug 15 2019 "
+                android:textStyle="italic"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
